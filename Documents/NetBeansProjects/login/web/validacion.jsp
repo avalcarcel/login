@@ -34,9 +34,11 @@ pst.setString(2, password);
 ResultSet rs = pst.executeQuery();
 
 if(rs.next())
-
-	response.sendRedirect("Bienvenido.jsp?user="+username+"");
-
+        if(rs.getString("user").equals("admin")){
+	response.sendRedirect("BienvenidoAdmin.jsp?user="+username+"");
+        }else{
+        response.sendRedirect("Bienvenido.jsp?user="+username+"");
+        }
 else
 
 	response.sendRedirect("login.jsp");

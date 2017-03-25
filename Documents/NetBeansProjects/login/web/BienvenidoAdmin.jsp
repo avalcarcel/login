@@ -10,13 +10,16 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
 <title>Usuario admin</title>
-<style>
-h3{
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    color: red;
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-}
-</style>
+        <!-- Latest compiled and minified JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
 </head>
 <body>
 <%
@@ -25,12 +28,11 @@ String username = request.getParameter("user");
 %>
 	<div class="container">
 			<div class="row">
-				<div class="col-xs-6 col-md-4"><h3></h3></div>
+				<div class="col-xs-6 col-md-4"></div>
 				<div class="col-xs-6 col-md-4">
-				<h3>Bienvenido <% out.println(username); %></h3>
-								  
+				<h3 style="color:red">Bienvenido <% out.println(username); %></h3>		  
 				</div>
- 				<div class="col-xs-6 col-md-4"><h3></h3></div>
+ 				<div class="col-xs-6 col-md-4"></div>
 			</div>
 		</div>
 </body>

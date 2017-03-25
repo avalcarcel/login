@@ -31,12 +31,11 @@ String username = request.getParameter("user");
 %>
 	<div class="container">
 			<div class="row">
-				<div class="col-xs-6 col-md-4"><h3></h3></div>
+				<div class="col-xs-6 col-md-4"></div>
 				<div class="col-xs-6 col-md-4">
-				<h3>Bienvenido <% out.println(username); %></h3>
-								  
+				<h3 style="color:green">Bienvenido <% out.println(username); %></h3>  
 				</div>
- 				<div class="col-xs-6 col-md-4"><h3></h3></div>
+ 				<div class="col-xs-6 col-md-4"></div>
 			</div>
 		</div>
 </body>
