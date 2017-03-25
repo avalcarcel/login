@@ -26,8 +26,38 @@
 
 	<div class="container">
 			<div class="row">
-				<div class="col-xs-6 col-md-4"><h3></h3></div>
-				<div class="col-xs-6 col-md-4"><h3></h3>
+				<div class="col-xs-6 col-md-4"><%@ page import ="java.sql.*" %>
+
+<%
+
+try {
+
+Class.forName("com.mysql.jdbc.Driver");
+String url = "jdbc:mysql://localhost/login";
+String usuario = "root";
+String clave = "";
+Connection conn = DriverManager.getConnection(url,usuario,clave);
+
+PreparedStatement pst = conn.prepareStatement("Select * from usuarios");
+
+
+
+ResultSet rs = pst.executeQuery();
+out.println("<br/><ul class='list.group'>");
+while(rs.next()){
+    String nombre = rs.getString("user");
+    out.println("<li class='list-group-item'>"+nombre+"</li>");
+}
+out.println("</ul>");
+} catch(Exception e){
+
+out.println("Error Lista JSP");
+out.println("<a class='btn btn-lg' href='login.jsp' > acceder</a>");
+out.println("<a class='btn btn-lg' href='registro.jsp' > Registro</a>");
+
+}
+%></div>
+				<div class="col-xs-6 col-md-4">
 
  <div class="wrapper">
     <!-- JSP TO JSP -->
@@ -40,11 +70,11 @@
       <label class="checkbox">
         <input type="checkbox" value="remember-me" id="rememberMe" name="rememberMe"> Remember me
       </label>
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>   
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>  | <a  class="btn btn-lg btn-primary btn-block" href="registro.jsp"> Registrate</a>
     </form>
   </div>
   </div>
- 				<div class="col-xs-6 col-md-4"><h3></h3></div>
+ 				<div class="col-xs-6 col-md-4"></div>
 			</div>
 		</div>
 </body>
